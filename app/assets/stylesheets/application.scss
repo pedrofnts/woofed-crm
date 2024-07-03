@@ -11,7 +11,7 @@ input[type=file]::file-selector-button {
 }
 input[type=file]:hover::file-selector-button {
   background-color: #EDF1FD;
-  color: #6857D9
+  color: #2662F0
 }
 
 .btn-remove {
@@ -40,7 +40,7 @@ input[type=file]:hover::file-selector-button {
   .main-content {
     padding-top: 0px !important;
   }
-  background-color: #F6F8FE;
+  background-color: #F8F9FA;
 }
 
 // event icons styles
@@ -53,7 +53,7 @@ input[type=file]:hover::file-selector-button {
 .clipboard-list, .menu-square{
   height: 14px;
   width: 14px;
-  stroke: #7161DB;
+  stroke: #2662F0;
 }
 
 // css scroll bar style

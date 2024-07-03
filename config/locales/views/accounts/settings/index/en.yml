@@ -3,7 +3,7 @@ en:
     accounts:
       settings:
         index:
-          integrate_with_other_apps: 'Integrate Woofed with other applications in your company'
+          integrate_with_other_apps: 'Integrate MyMedy with other applications in your company'
           whatsapp: 'WhatsApp'
           whatsapp_configuration: 'Set up your WhatsApp connection'
           chatwoot: 'Chatwoot'
