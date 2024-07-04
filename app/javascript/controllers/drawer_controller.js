@@ -4,7 +4,7 @@ import { Drawer } from "flowbite";
 export default class extends Controller {
   connect() {
     this.drawer = new Drawer(this.element, {
-      placement: "left",
+      placement: "right",
       backdrop: true,
       bodyScrolling: false,
       backdropClasses:
