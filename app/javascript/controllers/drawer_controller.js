@@ -10,10 +10,10 @@ export default class extends Controller {
       backdropClasses:
         "bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-30 pointer-events-none",
     });
-    this.drawer.hide();
+    this.drawer.show();
   }
   disconnect() {
-    this.drawer.show();
+    this.drawer.hide();
   }
   modalRemove() {
     this.drawer.remove();
