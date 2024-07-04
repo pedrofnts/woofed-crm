@@ -1,4 +1,4 @@
-<div data-controller="element-expanded" aria-expanded="true" class="group ease-in duration-300 h-screen border-r-2 border-light-palette-p3 relative p-4 space-y-4 w-[72px] aria-expanded:w-60" id="element-expand" data-element-expanded-target='sidebar'>
+<div data-controller="element-expanded" aria-expanded="true" class="group ease-in duration-300 h-screen border-l-2 border-light-palette-p3 fixed top-0 right-0 p-4 space-y-4 w-[72px] aria-expanded:w-60" id="element-expand" data-element-expanded-target='sidebar'>
   <div class="flex items-center flex-wrap justify-between">
     <%= link_to(root_path()) do %>
       <%= image_tag "logo.svg", class: 'w-36 block group-aria-[expanded=false]:hidden' %>
@@ -37,7 +37,7 @@
       <% end %>
     </li>
     <div class="h-[2px] w-full bg-light-palette-p3"></div>
-    <li class="<%= 'bg-brand-palette-08 !border-brand-palette-07 rounded-md !text-brand-palette-03' if request.path.include?('settings') %> text-dark-gray-palette-p3 border-2 border-transparent icons-button-sidebar mt-auto  absolute bottom-4 right-3 left-3 hover:bg-brand-palette-08 hover:rounded-md">
+    <li class="<%= 'bg-brand-palette-08 !border-brand-palette-07 rounded-md !text-brand-palette-03' if request.path.include?('settings') %> text-dark-gray-palette-p3 border-2 border-transparent icons-button-sidebar mt-auto absolute bottom-4 right-3 left-3 hover:bg-brand-palette-08 hover:rounded-md">
       <%= link_to(account_settings_path(Current.account), class: 'icons-link-sidebar flex space-x-3 p-3 items-center') do %>
         <%= embedded_svg("company-icon.svg", class: "w-4 lg:m-0 flex #{'!fill-brand-palette-03 ' if request.path.include?('settings')} group-aria-[expanded=false]:mx-auto fill-dark-gray-palette-p3") %>
         <span class="group-aria-[expanded=false]:hidden inline-block ml-2 typography-text-m-lh150">
