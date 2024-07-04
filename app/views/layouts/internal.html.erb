@@ -15,15 +15,10 @@
     <%= yield :stylesheets %>
   </head>
   <body>
-    <div id="app" class="h-screen">
+    <div id="app" class="h-screen relative">
       <%= render partial: 'components/flash_message', locals: { message: flash[:notice] } %>
       <div class="flex h-full">
-        <div>
-          <% unless controller_path == 'accounts/deals' && ['show'].include?(action_name) %>
-            <%= render "layouts/shared/sidebar" %>
-          <% end %>
-        </div>
-        <div class="flex flex-col h-full w-full overflow-auto">
+        <div class="flex flex-col h-full w-full overflow-auto pr-[72px] transition-all duration-300 ease-in-out" data-sidebar-target="main">
           <nav class="h-20">
             <%= render "layouts/shared/navbar" %>
           </nav>
@@ -33,8 +28,36 @@
             <%= turbo_frame_tag :drawer %>
           </main>
         </div>
+        <% unless controller_path == 'accounts/deals' && ['show'].include?(action_name) %>
+          <%= render "layouts/shared/sidebar" %>
+        <% end %>
       </div>
-      <div>
-        <%= yield :javascripts %>
-      </body>
-    </html>
+    </div>
+    <%= yield :javascripts %>
+
+    <script>
+      document.addEventListener('turbo:load', function() {
+        const sidebar = document.getElementById('element-expand');
+        const main = document.querySelector('[data-sidebar-target="main"]');
+
+        if (sidebar && main) {
+          const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              if (mutation.type === 'attributes' && mutation.attributeName === 'aria-expanded') {
+                if (sidebar.getAttribute('aria-expanded') === 'true') {
+                  main.classList.remove('pr-[72px]');
+                  main.classList.add('pr-60');
+                } else {
+                  main.classList.remove('pr-60');
+                  main.classList.add('pr-[72px]');
+                }
+              }
+            });
+          });
+
+          observer.observe(sidebar, { attributes: true });
+        }
+      });
+    </script>
+  </body>
+</html>

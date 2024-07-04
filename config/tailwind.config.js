@@ -25,7 +25,7 @@ module.exports = {
       "light-palette-p1": "#CCE7FF",
       "light-palette-p2": "#E1F0FF",
       "light-palette-p3": "#EBF6FF",
-      "light-palette-p4": "#F5FAFF",
+      "light-palette-p4": "#FBFDFF",
       "light-palette-p5": "#FFFFFF",
       "brand-palette-01": "#0F1C3A",
       "brand-palette-02": "#1A3C89",
